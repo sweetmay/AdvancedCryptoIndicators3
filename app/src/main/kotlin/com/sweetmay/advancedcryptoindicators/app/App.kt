@@ -2,6 +2,7 @@ package com.sweetmay.advancedcryptoindicators.app
 
 import android.app.Application
 import com.sweetmay.advancedcryptoindicators.data.di.dataModule
+import domainModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -18,7 +19,7 @@ class App: Application() {
         startKoin {
             androidContext(this@App)
             androidLogger(Level.ERROR)
-            modules(appModule + dataModule)
+            modules(appModule + dataModule + domainModule)
         }
     }
 
